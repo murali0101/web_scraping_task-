@@ -1,0 +1,29 @@
+{
+  "name": "web_scraping_task-",
+  "version": "1.0.0",
+  "description": "web scraping task ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murali0101/web_scraping_task-.git"
+  },
+  "keywords": [
+    "web",
+    "scraping",
+    "task",
+    "puppeteer",
+    "nodejs"
+  ],
+  "author": "M V Murali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murali0101/web_scraping_task-/issues"
+  },
+  "homepage": "https://github.com/murali0101/web_scraping_task-#readme",
+  "dependencies": {
+    "puppeteer": "^15.4.0"
+  }
+}
