@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/murali0101/web_scraping_task-#readme",
   "dependencies": {
-    "puppeteer": "^15.4.0"
+    "puppeteer": "^9.0.0",
+    "puppeteer-extra": "^3.1.18",
+    "puppeteer-extra-plugin-stealth": "^2.7.6"
   }
 }
