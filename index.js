@@ -1,6 +1,20 @@
+const express = require("express");
 const puppeteer = require("puppeteer");
+const app = express();
+const port = process.env.PORT || 6700;
+app.get("/", async (req, res) => {
+  try {
+    await webScraping()
+    return res.status(200).send("Web_Scraping_task_one_location")
+  } catch (error) {
+    return res.status(500).send("Web_Scraping_task_one_location")
+  }
+});
+app.listen(port, async (req, res) => {
+  console.log(`server listening the port ${port} .......`);
+});
 
-(async () => {
+async function webScraping() {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await page.on("response", async (response) => {
@@ -21,18 +35,18 @@ const puppeteer = require("puppeteer");
   //     //.........................
   //     request.continue();
   // });
-  
+
   await page.goto("https://food.grab.com/sg/en/", {
     waitUntil: "networkidle2",
   });
   // await page.waitForTimeout(10000);
 
   await page.screenshot({ path: "myimg.png" });
-  console.log("--------------------------------------------------------------1111111111111111")
+
   await page.type("#location-input", "manilla");
 
   await page.click(".ant-btn.submitBtn___2roqB.ant-btn-primary");
-  console.log("-------------------------------------------------------------2222222222222222222222")
+
   // const [response] = await Promise.all([page.waitForResponse(response => response.url().includes("/foodweb/v2/search"))])
   // const dataObj = await response.json();
   // console.log(dataObj)
@@ -46,5 +60,5 @@ const puppeteer = require("puppeteer");
   //   }
   // });
 
-  // await browser.close();
-})();
+  await browser.close();
+}
