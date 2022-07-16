@@ -7,7 +7,7 @@ app.get("/", async (req, res) => {
     await webScraping()
     return res.status(200).send("Web_Scraping_task_one_location")
   } catch (error) {
-    return res.status(500).send("Web_Scraping_task_one_location")
+    return res.status(500).send(error)
   }
 });
 app.listen(port, async (req, res) => {
@@ -24,7 +24,7 @@ async function webScraping() {
     //   console.log(await response._url);
     // }
     // console.log(response.url());
-    console.log(await response);
+    console.log(await response["_callbacks"]);
     // if (response.url().includes("/foodweb/v2/search")) {
     //   console.log(await response.json());
     // }
